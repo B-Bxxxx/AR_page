@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frontrocker AR modell</title>
+
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+    }
+
+    header {
+      padding: 16px;
+      text-align: center;
+      background: #222;
+      color: white;
+    }
+
+    model-viewer {
+      width: 100vw;
+      height: calc(100vh - 90px);
+      background: #e8e8e8;
+    }
+
+    .hint {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    button[slot="ar-button"] {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      padding: 12px 18px;
+      border: none;
+      border-radius: 10px;
+      background: #222;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <strong>Frontrocker optimalizált modell</strong>
+    <div class="hint">3D / AR megjelenítés</div>
+  </header>
+
+  <model-viewer
+    src="modell.glb"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    exposure="1"
+    scale="0.01 0.01 0.01">
+    
+    <button slot="ar-button">
+      Megnyitás AR-ben
+    </button>
+
+  </model-viewer>
+</body>
+</html>
